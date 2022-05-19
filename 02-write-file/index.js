@@ -20,7 +20,7 @@ fs.writeFile(
 
 rl.on('line', function (data) {
   input = data.toString();
-  if (input.trim() === 'exit') {
+  if (input === 'exit') {
     console.log(`Процесс завершен`);
     process.exit(0);
   }
@@ -35,6 +35,11 @@ rl.on('line', function (data) {
 
 
 rl.on('close', function (cmd) {
+  console.log(`Процесс завершен`);
+  process.exit(0);
+});
+
+rl.on('SIGINT', function (cmd) {
   console.log(`Процесс завершен`);
   process.exit(0);
 });
