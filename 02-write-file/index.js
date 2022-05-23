@@ -21,7 +21,7 @@ fs.writeFile(
 rl.on('line', function (data) {
   input = data.toString();
   if (input === 'exit') {
-    console.log(`Процесс завершен`);
+    console.log(`Процесс ввода завершен! Удачи!`);
     process.exit(0);
   }
   fs.appendFile(
@@ -35,11 +35,11 @@ rl.on('line', function (data) {
 
 
 rl.on('close', function (cmd) {
-  console.log(`Процесс завершен`);
+  console.log(`Процесс ввода завершен! Удачи!`);
   process.exit(0);
 });
 
 rl.on('SIGINT', function (cmd) {
-  console.log(`Процесс завершен`);
+  console.log(`Процесс ввода завершен! Удачи!`);
   process.exit(0);
 });
